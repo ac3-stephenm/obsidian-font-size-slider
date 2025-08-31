@@ -55,10 +55,12 @@ jspm_packages/
 # webstorm
 .idea/
 
-# repo-specific files
-main.js
+# repo-specific files  
 *.tar.gz
 
 # submission tracking
 PLUGIN_SUBMISSION_LOG.md
 PR_TEMPLATE_BODY.md
+
+# claude code
+.claude/
