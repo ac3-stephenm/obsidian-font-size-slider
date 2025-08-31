@@ -128,7 +128,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h1, [data-type="markdown"] h1 {
 				font-size: calc(var(--font-slider-base-size) * 2.25) !important;
 				line-height: 1.2 !important;
-				border-left: 3px solid red !important; /* DEBUG: Visual indicator */
 			}
 			h2, h2[class], h2[data-heading],
 			*[data-heading="2"], *[class*="header-2"], *[class*="h2"],
@@ -138,7 +137,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h2, [data-type="markdown"] h2 {
 				font-size: calc(var(--font-slider-base-size) * 1.75) !important;
 				line-height: 1.3 !important;
-				border-left: 3px solid orange !important; /* DEBUG: Visual indicator */
 			}
 			h3, h3[class], h3[data-heading],
 			*[data-heading="3"], *[class*="header-3"], *[class*="h3"],
@@ -148,7 +146,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h3, [data-type="markdown"] h3 {
 				font-size: calc(var(--font-slider-base-size) * 1.5) !important;
 				line-height: 1.3 !important;
-				border-left: 3px solid yellow !important; /* DEBUG: Visual indicator */
 			}
 			h4, h4[class], h4[data-heading],
 			*[data-heading="4"], *[class*="header-4"], *[class*="h4"],
@@ -158,7 +155,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h4, [data-type="markdown"] h4 {
 				font-size: calc(var(--font-slider-base-size) * 1.25) !important;
 				line-height: 1.4 !important;
-				border-left: 3px solid green !important; /* DEBUG: Visual indicator */
 			}
 			h5, h5[class], h5[data-heading],
 			*[data-heading="5"], *[class*="header-5"], *[class*="h5"],
@@ -168,7 +164,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h5, [data-type="markdown"] h5 {
 				font-size: calc(var(--font-slider-base-size) * 1.125) !important;
 				line-height: 1.4 !important;
-				border-left: 3px solid blue !important; /* DEBUG: Visual indicator */
 			}
 			h6, h6[class], h6[data-heading],
 			*[data-heading="6"], *[class*="header-6"], *[class*="h6"],
@@ -178,7 +173,6 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			div[class*="markdown"] h6, [data-type="markdown"] h6 {
 				font-size: calc(var(--font-slider-base-size) * 1.0625) !important;
 				line-height: 1.5 !important;
-				border-left: 3px solid purple !important; /* DEBUG: Visual indicator */
 			}
 			
 			/* Body text - base size */
@@ -219,12 +213,12 @@ var FontSizeSliderPlugin = class extends import_obsidian.Plugin {
 			}
 			
 			/* Nuclear option - catch all headings regardless of context */
-			* h1 { font-size: calc(var(--font-slider-base-size) * 2.25) !important; border-left: 3px solid red !important; }
-			* h2 { font-size: calc(var(--font-slider-base-size) * 1.75) !important; border-left: 3px solid orange !important; }
-			* h3 { font-size: calc(var(--font-slider-base-size) * 1.5) !important; border-left: 3px solid yellow !important; }
-			* h4 { font-size: calc(var(--font-slider-base-size) * 1.25) !important; border-left: 3px solid green !important; }
-			* h5 { font-size: calc(var(--font-slider-base-size) * 1.125) !important; border-left: 3px solid blue !important; }
-			* h6 { font-size: calc(var(--font-slider-base-size) * 1.0625) !important; border-left: 3px solid purple !important; }
+			* h1 { font-size: calc(var(--font-slider-base-size) * 2.25) !important; }
+			* h2 { font-size: calc(var(--font-slider-base-size) * 1.75) !important; }
+			* h3 { font-size: calc(var(--font-slider-base-size) * 1.5) !important; }
+			* h4 { font-size: calc(var(--font-slider-base-size) * 1.25) !important; }
+			* h5 { font-size: calc(var(--font-slider-base-size) * 1.125) !important; }
+			* h6 { font-size: calc(var(--font-slider-base-size) * 1.0625) !important; }
 		`;
     document.head.appendChild(style);
   }
