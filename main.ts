@@ -145,24 +145,84 @@ export default class FontSizeSliderPlugin extends Plugin {
 		const style = document.createElement('style');
 		style.id = 'font-slider-proportional-styles';
 		style.textContent = `
-			/* Headings with proportional hierarchy */
-			.markdown-preview-view h1, .markdown-source-view .cm-header-1 {
+			/* Universal heading selectors with maximum specificity */
+			body h1,
+			.app-container h1,
+			.workspace h1,
+			.workspace-leaf h1,
+			.markdown-preview-view h1, 
+			.markdown-source-view .cm-header-1,
+			.workspace-leaf-content[data-type="markdown"] h1,
+			.view-content h1,
+			div[class*="markdown"] h1,
+			[data-type="markdown"] h1 {
 				font-size: calc(var(--font-slider-base-size) * 2.25) !important;
+				line-height: 1.2 !important;
 			}
-			.markdown-preview-view h2, .markdown-source-view .cm-header-2 {
+			body h2,
+			.app-container h2,
+			.workspace h2,
+			.workspace-leaf h2,
+			.markdown-preview-view h2, 
+			.markdown-source-view .cm-header-2,
+			.workspace-leaf-content[data-type="markdown"] h2,
+			.view-content h2,
+			div[class*="markdown"] h2,
+			[data-type="markdown"] h2 {
 				font-size: calc(var(--font-slider-base-size) * 1.75) !important;
+				line-height: 1.3 !important;
 			}
-			.markdown-preview-view h3, .markdown-source-view .cm-header-3 {
+			body h3,
+			.app-container h3,
+			.workspace h3,
+			.workspace-leaf h3,
+			.markdown-preview-view h3, 
+			.markdown-source-view .cm-header-3,
+			.workspace-leaf-content[data-type="markdown"] h3,
+			.view-content h3,
+			div[class*="markdown"] h3,
+			[data-type="markdown"] h3 {
 				font-size: calc(var(--font-slider-base-size) * 1.5) !important;
+				line-height: 1.3 !important;
 			}
-			.markdown-preview-view h4, .markdown-source-view .cm-header-4 {
+			body h4,
+			.app-container h4,
+			.workspace h4,
+			.workspace-leaf h4,
+			.markdown-preview-view h4, 
+			.markdown-source-view .cm-header-4,
+			.workspace-leaf-content[data-type="markdown"] h4,
+			.view-content h4,
+			div[class*="markdown"] h4,
+			[data-type="markdown"] h4 {
 				font-size: calc(var(--font-slider-base-size) * 1.25) !important;
+				line-height: 1.4 !important;
 			}
-			.markdown-preview-view h5, .markdown-source-view .cm-header-5 {
+			body h5,
+			.app-container h5,
+			.workspace h5,
+			.workspace-leaf h5,
+			.markdown-preview-view h5, 
+			.markdown-source-view .cm-header-5,
+			.workspace-leaf-content[data-type="markdown"] h5,
+			.view-content h5,
+			div[class*="markdown"] h5,
+			[data-type="markdown"] h5 {
 				font-size: calc(var(--font-slider-base-size) * 1.125) !important;
+				line-height: 1.4 !important;
 			}
-			.markdown-preview-view h6, .markdown-source-view .cm-header-6 {
+			body h6,
+			.app-container h6,
+			.workspace h6,
+			.workspace-leaf h6,
+			.markdown-preview-view h6, 
+			.markdown-source-view .cm-header-6,
+			.workspace-leaf-content[data-type="markdown"] h6,
+			.view-content h6,
+			div[class*="markdown"] h6,
+			[data-type="markdown"] h6 {
 				font-size: calc(var(--font-slider-base-size) * 1.0625) !important;
+				line-height: 1.5 !important;
 			}
 			
 			/* Body text - base size */
