@@ -58,3 +58,7 @@ jspm_packages/
 # repo-specific files
 main.js
 *.tar.gz
+
+# submission tracking
+PLUGIN_SUBMISSION_LOG.md
+PR_TEMPLATE_BODY.md

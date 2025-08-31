@@ -1,6 +1,6 @@
 # Font Size Slider
 
-A simple Obsidian plugin that adds a font size slider to the status bar.
+Adds a font size slider to the status bar for easy text scaling.
 
 ## What it does
 

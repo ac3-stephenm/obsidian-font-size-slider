@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-font-size-slider",
+  "name": "font-size-slider",
   "version": "1.0.0",
-  "description": "A simple Obsidian plugin that adds a font size slider to the status bar.",
+  "description": "Adds a font size slider to the status bar for easy text scaling.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
