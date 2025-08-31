@@ -1,7 +1,7 @@
 {
 	"id": "font-size-slider",
 	"name": "Font Size Slider",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Adds a font size slider to the status bar for easy text scaling.",
 	"author": "Stephen McKay",
