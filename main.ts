@@ -138,26 +138,76 @@ export default class FontSizeSliderPlugin extends Plugin {
 		// Remove existing styles
 		this.removeFontStyles();
 		
-		// Apply new font size using CSS custom properties
-		document.documentElement.style.setProperty('--font-text-size', `${fontSize}px`);
+		// Set CSS custom property for proportional base font size
+		document.documentElement.style.setProperty('--font-slider-base-size', `${fontSize}px`);
 		
-		// Also set editor font size directly for better compatibility
+		// Create proportional scaling CSS for all markdown elements
 		const style = document.createElement('style');
-		style.id = 'font-slider-custom-styles';
+		style.id = 'font-slider-proportional-styles';
 		style.textContent = `
+			/* Headings with proportional hierarchy */
+			.markdown-preview-view h1, .markdown-source-view .cm-header-1 {
+				font-size: calc(var(--font-slider-base-size) * 2.25) !important;
+			}
+			.markdown-preview-view h2, .markdown-source-view .cm-header-2 {
+				font-size: calc(var(--font-slider-base-size) * 1.75) !important;
+			}
+			.markdown-preview-view h3, .markdown-source-view .cm-header-3 {
+				font-size: calc(var(--font-slider-base-size) * 1.5) !important;
+			}
+			.markdown-preview-view h4, .markdown-source-view .cm-header-4 {
+				font-size: calc(var(--font-slider-base-size) * 1.25) !important;
+			}
+			.markdown-preview-view h5, .markdown-source-view .cm-header-5 {
+				font-size: calc(var(--font-slider-base-size) * 1.125) !important;
+			}
+			.markdown-preview-view h6, .markdown-source-view .cm-header-6 {
+				font-size: calc(var(--font-slider-base-size) * 1.0625) !important;
+			}
+			
+			/* Body text - base size */
+			.markdown-preview-view p, 
+			.markdown-source-view .cm-line,
 			.markdown-source-view.mod-cm6 .cm-editor,
-			.markdown-preview-view,
-			.cm-s-obsidian .cm-line,
 			.view-content .markdown-source-view {
-				font-size: ${fontSize}px !important;
+				font-size: var(--font-slider-base-size) !important;
+			}
+			
+			/* Code elements - slightly smaller */
+			.markdown-preview-view code,
+			.markdown-source-view .cm-inline-code {
+				font-size: calc(var(--font-slider-base-size) * 0.9) !important;
+			}
+			.markdown-preview-view pre,
+			.markdown-source-view .cm-line.HyperMD-codeblock {
+				font-size: calc(var(--font-slider-base-size) * 0.9) !important;
+			}
+			
+			/* Tables */
+			.markdown-preview-view table,
+			.markdown-preview-view th,
+			.markdown-preview-view td {
+				font-size: calc(var(--font-slider-base-size) * 0.95) !important;
+			}
+			
+			/* Lists */
+			.markdown-preview-view li,
+			.markdown-preview-view ul,
+			.markdown-preview-view ol {
+				font-size: var(--font-slider-base-size) !important;
+			}
+			
+			/* Blockquotes */
+			.markdown-preview-view blockquote {
+				font-size: calc(var(--font-slider-base-size) * 0.95) !important;
 			}
 		`;
 		document.head.appendChild(style);
 	}
 
 	removeFontStyles() {
-		document.documentElement.style.removeProperty('--font-text-size');
-		const existingStyle = document.getElementById('font-slider-custom-styles');
+		document.documentElement.style.removeProperty('--font-slider-base-size');
+		const existingStyle = document.getElementById('font-slider-proportional-styles');
 		if (existingStyle) {
 			existingStyle.remove();
 		}
