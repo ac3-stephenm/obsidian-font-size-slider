@@ -145,84 +145,66 @@ export default class FontSizeSliderPlugin extends Plugin {
 		const style = document.createElement('style');
 		style.id = 'font-slider-proportional-styles';
 		style.textContent = `
-			/* Universal heading selectors with maximum specificity */
-			body h1,
-			.app-container h1,
-			.workspace h1,
-			.workspace-leaf h1,
-			.markdown-preview-view h1, 
-			.markdown-source-view .cm-header-1,
-			.workspace-leaf-content[data-type="markdown"] h1,
-			.view-content h1,
-			div[class*="markdown"] h1,
-			[data-type="markdown"] h1 {
+			/* Universal heading selectors with maximum specificity and debugging */
+			h1, h1[class], h1[data-heading],
+			*[data-heading="1"], *[class*="header-1"], *[class*="h1"],
+			body h1, .app-container h1, .workspace h1, .workspace-leaf h1,
+			.markdown-preview-view h1, .markdown-source-view .cm-header-1,
+			.workspace-leaf-content[data-type="markdown"] h1, .view-content h1,
+			div[class*="markdown"] h1, [data-type="markdown"] h1 {
 				font-size: calc(var(--font-slider-base-size) * 2.25) !important;
 				line-height: 1.2 !important;
+				border-left: 3px solid red !important; /* DEBUG: Visual indicator */
 			}
-			body h2,
-			.app-container h2,
-			.workspace h2,
-			.workspace-leaf h2,
-			.markdown-preview-view h2, 
-			.markdown-source-view .cm-header-2,
-			.workspace-leaf-content[data-type="markdown"] h2,
-			.view-content h2,
-			div[class*="markdown"] h2,
-			[data-type="markdown"] h2 {
+			h2, h2[class], h2[data-heading],
+			*[data-heading="2"], *[class*="header-2"], *[class*="h2"],
+			body h2, .app-container h2, .workspace h2, .workspace-leaf h2,
+			.markdown-preview-view h2, .markdown-source-view .cm-header-2,
+			.workspace-leaf-content[data-type="markdown"] h2, .view-content h2,
+			div[class*="markdown"] h2, [data-type="markdown"] h2 {
 				font-size: calc(var(--font-slider-base-size) * 1.75) !important;
 				line-height: 1.3 !important;
+				border-left: 3px solid orange !important; /* DEBUG: Visual indicator */
 			}
-			body h3,
-			.app-container h3,
-			.workspace h3,
-			.workspace-leaf h3,
-			.markdown-preview-view h3, 
-			.markdown-source-view .cm-header-3,
-			.workspace-leaf-content[data-type="markdown"] h3,
-			.view-content h3,
-			div[class*="markdown"] h3,
-			[data-type="markdown"] h3 {
+			h3, h3[class], h3[data-heading],
+			*[data-heading="3"], *[class*="header-3"], *[class*="h3"],
+			body h3, .app-container h3, .workspace h3, .workspace-leaf h3,
+			.markdown-preview-view h3, .markdown-source-view .cm-header-3,
+			.workspace-leaf-content[data-type="markdown"] h3, .view-content h3,
+			div[class*="markdown"] h3, [data-type="markdown"] h3 {
 				font-size: calc(var(--font-slider-base-size) * 1.5) !important;
 				line-height: 1.3 !important;
+				border-left: 3px solid yellow !important; /* DEBUG: Visual indicator */
 			}
-			body h4,
-			.app-container h4,
-			.workspace h4,
-			.workspace-leaf h4,
-			.markdown-preview-view h4, 
-			.markdown-source-view .cm-header-4,
-			.workspace-leaf-content[data-type="markdown"] h4,
-			.view-content h4,
-			div[class*="markdown"] h4,
-			[data-type="markdown"] h4 {
+			h4, h4[class], h4[data-heading],
+			*[data-heading="4"], *[class*="header-4"], *[class*="h4"],
+			body h4, .app-container h4, .workspace h4, .workspace-leaf h4,
+			.markdown-preview-view h4, .markdown-source-view .cm-header-4,
+			.workspace-leaf-content[data-type="markdown"] h4, .view-content h4,
+			div[class*="markdown"] h4, [data-type="markdown"] h4 {
 				font-size: calc(var(--font-slider-base-size) * 1.25) !important;
 				line-height: 1.4 !important;
+				border-left: 3px solid green !important; /* DEBUG: Visual indicator */
 			}
-			body h5,
-			.app-container h5,
-			.workspace h5,
-			.workspace-leaf h5,
-			.markdown-preview-view h5, 
-			.markdown-source-view .cm-header-5,
-			.workspace-leaf-content[data-type="markdown"] h5,
-			.view-content h5,
-			div[class*="markdown"] h5,
-			[data-type="markdown"] h5 {
+			h5, h5[class], h5[data-heading],
+			*[data-heading="5"], *[class*="header-5"], *[class*="h5"],
+			body h5, .app-container h5, .workspace h5, .workspace-leaf h5,
+			.markdown-preview-view h5, .markdown-source-view .cm-header-5,
+			.workspace-leaf-content[data-type="markdown"] h5, .view-content h5,
+			div[class*="markdown"] h5, [data-type="markdown"] h5 {
 				font-size: calc(var(--font-slider-base-size) * 1.125) !important;
 				line-height: 1.4 !important;
+				border-left: 3px solid blue !important; /* DEBUG: Visual indicator */
 			}
-			body h6,
-			.app-container h6,
-			.workspace h6,
-			.workspace-leaf h6,
-			.markdown-preview-view h6, 
-			.markdown-source-view .cm-header-6,
-			.workspace-leaf-content[data-type="markdown"] h6,
-			.view-content h6,
-			div[class*="markdown"] h6,
-			[data-type="markdown"] h6 {
+			h6, h6[class], h6[data-heading],
+			*[data-heading="6"], *[class*="header-6"], *[class*="h6"],
+			body h6, .app-container h6, .workspace h6, .workspace-leaf h6,
+			.markdown-preview-view h6, .markdown-source-view .cm-header-6,
+			.workspace-leaf-content[data-type="markdown"] h6, .view-content h6,
+			div[class*="markdown"] h6, [data-type="markdown"] h6 {
 				font-size: calc(var(--font-slider-base-size) * 1.0625) !important;
 				line-height: 1.5 !important;
+				border-left: 3px solid purple !important; /* DEBUG: Visual indicator */
 			}
 			
 			/* Body text - base size */
@@ -261,6 +243,14 @@ export default class FontSizeSliderPlugin extends Plugin {
 			.markdown-preview-view blockquote {
 				font-size: calc(var(--font-slider-base-size) * 0.95) !important;
 			}
+			
+			/* Nuclear option - catch all headings regardless of context */
+			* h1 { font-size: calc(var(--font-slider-base-size) * 2.25) !important; border-left: 3px solid red !important; }
+			* h2 { font-size: calc(var(--font-slider-base-size) * 1.75) !important; border-left: 3px solid orange !important; }
+			* h3 { font-size: calc(var(--font-slider-base-size) * 1.5) !important; border-left: 3px solid yellow !important; }
+			* h4 { font-size: calc(var(--font-slider-base-size) * 1.25) !important; border-left: 3px solid green !important; }
+			* h5 { font-size: calc(var(--font-slider-base-size) * 1.125) !important; border-left: 3px solid blue !important; }
+			* h6 { font-size: calc(var(--font-slider-base-size) * 1.0625) !important; border-left: 3px solid purple !important; }
 		`;
 		document.head.appendChild(style);
 	}
